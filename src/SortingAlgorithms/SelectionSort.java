@@ -6,10 +6,13 @@ package SortingAlgorithms;
 
 // Selection sort in Java
 
+import Model.DataAndOrderModel;
+import Utils.GenerateDataUtil;
+
 import java.util.Arrays;
 
 class SelectionSort {
-    void selectionSort(int array[]) {
+    void selectionSort(int[] array, String order) {
         int size = array.length;
 
         for (int step = 0; step < size - 1; step++) {
@@ -17,10 +20,16 @@ class SelectionSort {
 
             for (int i = step + 1; i < size; i++) {
 
-                // To sort in descending order, change > to < in this line.
+
                 // Select the minimum element in each loop.
-                if (array[i] < array[min_idx]) {
-                    min_idx = i;
+                if (order.equals("asc")) {
+                    if (array[i] < array[min_idx]) {
+                        min_idx = i;
+                    }
+                } else if (order.equals("desc")) {
+                    if (array[i] > array[min_idx]) {
+                        min_idx = i;
+                    }
                 }
             }
 
@@ -32,11 +41,12 @@ class SelectionSort {
     }
 
     // driver code
-    public static void main(String args[]) {
-        int[] data = { 20, 12, 10, 15, 2 };
+    public static void main(String[] args) {
+        //int[] data = { 20, 12, 10, 15, 2 };
+        DataAndOrderModel dataAndOrderModel = GenerateDataUtil.getData();
         SelectionSort ss = new SelectionSort();
-        ss.selectionSort(data);
+        ss.selectionSort(dataAndOrderModel.getData(), dataAndOrderModel.getOrder());
         System.out.println("Sorted Array in Ascending Order: ");
-        System.out.println(Arrays.toString(data));
+        System.out.println(Arrays.toString(dataAndOrderModel.getData()));
     }
 }

@@ -34,3 +34,5 @@ out\
 .idea/dictionaries
 .idea/libraries
 .idea/cachesworkspace.xml
+.idea/vcs.xml
+/.idea/

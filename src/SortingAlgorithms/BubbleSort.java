@@ -5,9 +5,10 @@ package SortingAlgorithms;
  */
 
 
+import Model.DataAndOrderModel;
+import Utils.GenerateDataUtil;
+
 import java.util.Arrays;
-import java.util.Locale;
-import java.util.Scanner;
 
 // Bubble sort in Java
 public class BubbleSort {
@@ -44,21 +45,11 @@ public class BubbleSort {
                 }
     }
 
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the order in which the sorting should be done (ASC or DESC): ");
-        String order  = sc.nextLine();
-        System.out.println("Size of array to sort: ");
-        int n = sc.nextInt();
-        int[] data = new int[n];
-        System.out.println("Enter numbers to sort: ");
-        for(int i=0; i<n; i++) {
-            data[i] = sc.nextInt();
-        }
+    public static void main(String[] args) {
+        DataAndOrderModel dataAndOrderModel = GenerateDataUtil.getData();
         // call method using class name
-        BubbleSort.bubbleSort(data, order.toLowerCase(Locale.ROOT));
-
+        BubbleSort.bubbleSort(dataAndOrderModel.getData(), dataAndOrderModel.getOrder());
         System.out.println("Sorted Array in Ascending Order:");
-        System.out.println(Arrays.toString(data));
+        System.out.println(Arrays.toString(dataAndOrderModel.getData()));
     }
 }

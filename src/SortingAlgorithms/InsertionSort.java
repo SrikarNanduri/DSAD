@@ -6,36 +6,46 @@ package SortingAlgorithms;
 
 // Insertion sort in Java
 
+import Model.DataAndOrderModel;
+import Utils.GenerateDataUtil;
+
 import java.util.Arrays;
 
 class InsertionSort {
 
-    void insertionSort(int array[]) {
+    void insertionSort(int[] array, String order) {
         int size = array.length;
 
         for (int step = 1; step < size; step++) {
-            int key = array[step];
-            int j = step - 1;
+            int key = array[step];                  // key is the next element which is not sorted
+            int previousIndex = step - 1;           // previousIndex can be the left elements which are assumed to be sorted.
 
             // Compare key with each element on the left of it until an element smaller than
             // it is found.
-            // For descending order, change key<array[j] to key>array[j].
-            while (j >= 0 && key < array[j]) {
-                array[j + 1] = array[j];
-                --j;
+            if (order.equals("asc")) {
+                while (previousIndex >= 0 && key < array[previousIndex]) {
+                    array[previousIndex + 1] = array[previousIndex];
+                    --previousIndex;
+                }
+            } else if (order.equals("desc")) {
+                while (previousIndex >= 0 && key > array[previousIndex]) {
+                    array[previousIndex + 1] = array[previousIndex];
+                    --previousIndex;
+                }
             }
 
             // Place key at after the element just smaller than it.
-            array[j + 1] = key;
+            array[previousIndex + 1] = key;
         }
     }
 
     // Driver code
-    public static void main(String args[]) {
-        int[] data = { 9, 5, 1, 4, 3 };
+    public static void main(String[] args) {
+        //int[] data = { 9, 5, 1, 4, 3 };
+        DataAndOrderModel dataAndOrderModel = GenerateDataUtil.getData();
         InsertionSort is = new InsertionSort();
-        is.insertionSort(data);
+        is.insertionSort(dataAndOrderModel.getData(), dataAndOrderModel.getOrder());
         System.out.println("Sorted Array in Ascending Order: ");
-        System.out.println(Arrays.toString(data));
+        System.out.println(Arrays.toString(dataAndOrderModel.getData()));
     }
 }
