@@ -6,6 +6,9 @@ package SortingAlgorithms;
 
 // Quick sort in Java
 
+import Model.DataAndOrderModel;
+import Utils.GenerateDataUtil;
+
 import java.util.Arrays;
 
 class Quicksort {
@@ -60,13 +63,12 @@ class Quicksort {
             quickSort(array, pi + 1, high);
         }
     }
-}
 
-// Main class
-class Main {
     public static void main(String args[]) {
 
-        int[] data = { 8, 7, 2, 1, 0, 9, 6 };
+        //int[] data = { 8, 7, 2, 1, 0, 9, 6 };
+        DataAndOrderModel dataAndOrderModel = GenerateDataUtil.getData();
+        int[] data = dataAndOrderModel.getData();
         System.out.println("Unsorted Array");
         System.out.println(Arrays.toString(data));
 
@@ -79,3 +81,4 @@ class Main {
         System.out.println(Arrays.toString(data));
     }
 }
+

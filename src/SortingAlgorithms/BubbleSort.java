@@ -45,6 +45,29 @@ public class BubbleSort {
                 }
     }
 
+    public static int bubbleSortSwapped(int[] array) {
+        boolean swapped;
+        int count = 0;
+        for (int i=0; i< array.length; i++) {
+            swapped = false;
+            count++;
+            for (int j = 0; j< array.length-i-1; j++) {
+                if( array[j] > array[j+1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if(!swapped) {
+                break;
+            }
+        }
+
+        return count;
+
+    }
+
     public static void main(String[] args) {
         DataAndOrderModel dataAndOrderModel = GenerateDataUtil.getData();
         // call method using class name
