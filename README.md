@@ -25,3 +25,6 @@ This project contains DSAD algorithms implementation in Java.
 - Complete Binary Tree
 - Full Binary Tree
 - Perfect Binary Tree
+
+### LeetCode problems
+some of the problems from leetcode.
