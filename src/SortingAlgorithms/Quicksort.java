@@ -6,8 +6,8 @@ package SortingAlgorithms;
 
 // Quick sort in Java
 
-import Model.DataAndOrderModel;
-import Utils.GenerateDataUtil;
+import SortingAlgorithms.Model.DataAndOrderModel;
+import SortingAlgorithms.Utils.GenerateDataUtil;
 
 import java.util.Arrays;
 

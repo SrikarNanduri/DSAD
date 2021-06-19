@@ -1,6 +1,6 @@
-package Utils;
+package SortingAlgorithms.Utils;
 
-import Model.DataAndOrderModel;
+import SortingAlgorithms.Model.DataAndOrderModel;
 
 import java.util.Scanner;
 

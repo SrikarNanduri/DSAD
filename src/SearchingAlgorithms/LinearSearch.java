@@ -4,6 +4,14 @@ package SearchingAlgorithms;
  * Created by srikar on 04-06-2021.
  */
 
+/**
+ * Linear search is a sequential searching algorithm where we start from one end and check every element of the list
+ * until the desired element is found. It is the simplest searching algorithm.
+ **/
+
+/**
+ * Time Complexity: O(n)
+ **/
 // Linear Search in Java
 
 class LinearSearch {

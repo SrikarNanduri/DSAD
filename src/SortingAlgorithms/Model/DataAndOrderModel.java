@@ -1,4 +1,4 @@
-package Model;
+package SortingAlgorithms.Model;
 
 /**
  * Created by srikar on 04-06-2021.
