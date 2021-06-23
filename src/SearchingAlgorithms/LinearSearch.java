@@ -15,7 +15,7 @@ package SearchingAlgorithms;
 // Linear Search in Java
 
 class LinearSearch {
-    public static int linearSearch(int array[], int x) {
+    public static int linearSearch(int[] array, int x) {
         int n = array.length;
 
         // Going through array sequencially
@@ -26,7 +26,7 @@ class LinearSearch {
         return -1;
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int array[] = { 2, 4, 0, 1, 9 };
         int x = 1;
 
